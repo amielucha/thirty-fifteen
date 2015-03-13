@@ -1,0 +1,26 @@
+{{!< default}}
+
+{{! This is a page template. A page outputs content just like any other post, and has all the same
+    attributes by default, but you can also customise it to behave differently if you prefer. }}
+
+{{! Everything inside the #post tags pulls data from the page }}
+{{#post}}
+
+<main id="main" class="site-main" role="main">
+    <article class="{{post_class}} hentry{{#if image}} has-post-thumbnail{{/if}}">
+        {{#if image}}
+        <div class="post-thumbnail">
+            <img src="{{image}}" alt="{{title}} cover">
+        </div>
+        {{/if}}
+        <header class="entry-header">
+            <h1 class="entry-title">{{title}}</h1>
+        </header>
+
+        <section class="entry-content">
+            {{content}}
+        </section>
+
+    </article>
+</main>
+{{/post}}
